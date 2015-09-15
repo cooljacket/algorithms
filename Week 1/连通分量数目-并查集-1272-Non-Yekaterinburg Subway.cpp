@@ -15,10 +15,10 @@ int main() {
 	scanf("%d%d%d", &N, &K, &M);
 	vector<int> index(N+1);
 
+	//步骤一
 	for (int i = 1; i <= N; ++i) {
 		index[i] = i;
 	}
-
 	for (int i = 0; i < K; ++i) {
 		scanf("%d%d", &u, &v);
 		u = findSet(index, u);
@@ -27,6 +27,7 @@ int main() {
 			index[u] = v;
 	}
 
+	//步骤二
 	set<int> s;
 	for (int i = 1; i <= N; ++i) {
 		int key = findSet(index, i);
